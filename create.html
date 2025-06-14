@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>create</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="mainFrame" id="mainFrame">
+        <header>
+            <img src="images/darkModeNotePad.png" alt="">
+            <h1 id="title">notApp</h1>
+        </header>
+        <div class="content" id="content">
+            <div class="name">
+                <h2>Title:</h2>
+<!--i am using p instead of input. In my javascript for me to get the value of p "DON'T USE VALUE, USE INNERHTML OR INNERTEXT OR STH ESLE."
+P don't have values
+-->
+                <p contenteditable="true" class="title" id="heading" datatype="text"></p>
+            </div>
+            <div class="details">
+                <h2>Content:</h2>
+                <p contenteditable="true" class="paragraph" datatype="text" id="paragraph"></p>
+            </div>
+
+            <button class="submit" id="submit" >submit</button>
+        </div>
+    </div>
+    <script src="main2.js"></script>
+</body>
+</html>

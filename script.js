@@ -1,3 +1,10 @@
+//this is what youtube gave me
+//just for remider incase i need a concept here.
+
+
+
+
+
 const noteContainer = document.getElementById('notesContainer');
 const createButton = document.getElementById('createNotes')
 let notes = document.getElementById('inputBox');
@@ -16,8 +23,8 @@ function updateStorage(){
     localStorage.setItem('notes', noteContainer.innerHTML);
 }
 createButton.addEventListener('click',()=>{
-    let inputBox = document.createElement("p")
-    let img = document.createElement("img");
+    let inputBox = document.createElement("P")
+    let img = document.createElement("IMG");
     inputBox.className = 'inputBox';
     inputBox.setAttribute('contenteditable', 'true');
     img.src = "images/deleteDarkMode.png";
@@ -25,10 +32,10 @@ createButton.addEventListener('click',()=>{
 })
 
 noteContainer.addEventListener('click', function (e){
-    if(e.target.tagName === "img"){
+    if(e.target.tagName === "IMG"){
         e.target.parentElement.remove();
         updateStorage();
-    }else if(e.target.tagName === "p"){
+    }else if(e.target.tagName === "P"){
         notes = document.getElementById("inputBox");
         notes.forEach(nt =>{
             nt.onkeyup = function(){

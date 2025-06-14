@@ -12,15 +12,24 @@
 </head>
 <body>
 <div class="container">
-    <h1><img src="images/darkModeNotePad.png" alt="">Notes</h1>
-    <button id="createNotes" class="createNotes"><img src="images/createNoteDarkMode.png" alt="">Create Notes</button>
-    <div class="notesContainer" id="notesContainer">
-<!--        <p contenteditable="true" id="inputBox" class="inputBox">-->
-<!--            <img src="images/deleteDarkMode.png">-->
-<!--        </p>-->
+    <a href="index.html">
+        <h1><img src="images/darkModeNotePad.png" alt="">Notes</h1>
+    </a>
+    <nav class="navBar">
+        <a href="./create.html">New Notes</a>
+        <a href="#">about</a>
+    </nav>
+    <div class="content" id="content">
+        <ol id="notes">
+<!--            <li class="note" id="note">-->
+<!--                <h1 id="heading"></h1>-->
+<!--                <p id="story"></p>-->
+<!--            </li>-->
 
+        </ol>
     </div>
+
 </div>
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

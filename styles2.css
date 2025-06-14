@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --mainColor: #020D19;
+  --subMainColor: #C0C0C0;
+  --textColor: #fff;
+  --fontFamily: "Press Start 2P";
+  --background: linear-gradient(135deg,var(--mainColor), var(--subMainColor));
+  --fontSize:20px; }
+
+body.light-mode {
+  --mainColor: #C0C0C0;
+  --subMainColor:#fff;
+  --textColor: #020D19;
+  --fontFamily: "Press Start 2P";
+  --background: radial-gradient(var(--mainColor), var(--subMainColor)); }
+
+body {
+  background: var(--background);
+  background-repeat: no-repeat;
+  color: var(--textColor);
+  overflow: hidden;
+  font-family: var(--fontFamily);
+  height: 970px; }
+  body .mainFrame {
+    width: 50%;
+    background: var(--mainColor);
+    margin: 100px auto 0;
+    border-radius: 20px;
+    height: 65%; }
+    body .mainFrame header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid var(--textColor); }
+    body .mainFrame .content {
+      border: 2px dotted var(--textColor);
+      margin: 20px;
+      height: auto;
+      font-size: var(--fontSize); }
+      body .mainFrame .content .name {
+        display: flex;
+        align-items: center; }
+        body .mainFrame .content .name .title {
+          background: var(--subMainColor);
+          color: var(--mainColor);
+          margin: 30px;
+          border: none;
+          border-radius: 10px;
+          width: 50%;
+          height: 40px;
+          text-align: left;
+          align-content: center; }
+      body .mainFrame .content .details {
+        display: flex; }
+        body .mainFrame .content .details .paragraph {
+          margin: 30px;
+          width: 90%;
+          height: 250px;
+          color: var(--mainColor);
+          background: var(--subMainColor);
+          border: none;
+          border-radius: 10px; }
+    body .mainFrame .submit {
+      font-family: var(--fontFamily);
+      background: var(--background);
+      box-shadow: 2px 2px 2px var(--textColor);
+      color: var(--textColor);
+      width: 150px;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out; }
+      body .mainFrame .submit:hover {
+        box-shadow: 0 0 20px var(--mainColor);
+        transform: scale(1.1);
+        background: linear-gradient(var(--subMainColor), var(--textColor));
+        color: var(--mainColor); }
+      body .mainFrame .submit:active {
+        box-shadow: inset 0 0 5px var(--textColor);
+        transform: scale(0.95); }
+
+/*# sourceMappingURL=styles2.css.map */

@@ -26,53 +26,74 @@ body {
     margin: 100px auto 0;
     border-radius: 20px;
     height: auto; }
-    body .container h1 {
-      margin: 50px;
-      padding: 30px;
-      text-align: center; }
-      body .container h1:hover {
-        color: var(--subMainColor); }
-      body .container h1 img {
-        width: 60px;
-        height: 60px;
-        transition: all 0.3s ease-in-out; }
-        body .container h1 img:hover {
-          width: 70px;
-          height: 70px; }
-    body .container .createNotes {
-      background: var(--background);
-      color: var(--textColor);
-      font-family: var(--fontFamily);
-      width: auto;
-      height: 40px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      transition: all 0.3s ease-in-out; }
-      body .container .createNotes img {
-        width: 25px;
-        padding-right: 10px; }
-      body .container .createNotes:hover {
-        height: 45px;
-        transform: scaleX(1.05);
-        box-shadow: 0 0 20px var(--textColor); }
-      body .container .createNotes:active {
-        transform: scale(0.95);
-        box-shadow: inset 0 0 5px var(--textColor); }
-    body .container .notesContainer .inputBox {
-      margin: 10px;
-      padding: 10px;
-      font-size: 15px;
-      border: solid 2px;
-      border-radius: 20px; }
-      body .container .notesContainer .inputBox:focus {
-        outline: none; }
-      body .container .notesContainer .inputBox img {
-        width: 25px;
-        position: absolute;
-        bottom: 26%;
-        right: 17%;
-        cursor: pointer; }
+    body .container a {
+      text-decoration: none;
+      color: var(--textColor); }
+      body .container a h1 {
+        margin: 50px;
+        padding: 30px;
+        text-align: center; }
+        body .container a h1:hover {
+          color: var(--subMainColor); }
+        body .container a h1 img {
+          width: 60px;
+          height: 60px;
+          transition: all 0.3s ease-in-out; }
+          body .container a h1 img:hover {
+            width: 70px;
+            height: 70px; }
+    body .container .navBar {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px;
+      padding: 30px; }
+      body .container .navBar a {
+        transition: 0.3s ease-in-out; }
+        body .container .navBar a::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 20px;
+          height: 2px;
+          width: 0;
+          background-color: var(--subMainColor);
+          transition: width 0.3s ease-in-out; }
+        body .container .navBar a:hover {
+          color: var(--subMainColor);
+          transform: scale(1.1); }
+          body .container .navBar a:hover::after {
+            width: 100%; }
+        body .container .navBar a:active {
+          transform: scale(0.95); }
+    body .container .content {
+      margin: 20px; }
+      body .container .content ol {
+        margin: 10px; }
+        body .container .content ol li {
+          margin: 10px; }
+          body .container .content ol li .delete {
+            border: none;
+            border-radius: 10px;
+            width: 100px;
+            height: 30px;
+            margin: 5px;
+            position: relative;
+            bottom: 50px;
+            left: 80%;
+            font-size: 25px;
+            font-weight: bold;
+            background: linear-gradient(to right, #1e3c72, #2a9830);
+            /* initial gradient */
+            background-size: 200% 100%;
+            /* makes the gradient double width */
+            background-position: left;
+            /* start from left */
+            transition: background-position 0.9s ease-in-out;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); }
+            body .container .content ol li .delete:hover {
+              background-position: right;
+              box-shadow: 0 0 10px rgba(42, 82, 152, 0.7); }
 
 /*# sourceMappingURL=styles.css.map */

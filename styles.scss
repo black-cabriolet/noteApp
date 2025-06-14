@@ -9,88 +9,125 @@
 }
 body.light-mode{
   --mainColor: #C0C0C0;
-  --subMainColor:#fff;
-  --textColor:  #020D19;
-  --fontFamily: "Press Start 2P";
-  --background: radial-gradient(var(--mainColor), var(--subMainColor));
-}
-
-body{
-  background: var(--background);
-  background-repeat: no-repeat;
-  color: var(--textColor);
-  overflow: hidden;
-  font-family: var(--fontFamily);
-  height: 970px;
-
-  .container{
-    background: var(--mainColor);
-    width: 70%;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    height: auto;
-    h1{
-      margin: 50px;
-      padding: 30px;
-      text-align: center;
-      &:hover{
-        color: var(--subMainColor);
-      }
-      & img{
-        width: 60px;
-        height: 60px;
-        transition:all 0.3s ease-in-out;
-        &:hover{
-          width: 70px;
-          height: 70px;
-        }
-      }
-    }
-    .createNotes{
-      background: var(--background);
-      color: var(--textColor);
-      font-family: var(--fontFamily);
-      width: auto;
-      height: 40px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      transition: all 0.3s ease-in-out;
-      & img{
-        width: 25px;
-        padding-right: 10px;
-      }
-      &:hover{
-        height:45px;
-        transform: scaleX(1.05);
-        box-shadow: 0 0 20px var(--textColor);
-      }
-      &:active{
-        transform: scale(0.95);
-        box-shadow: inset 0 0 5px var(--textColor);
-      }
-
-    }
-    .notesContainer{
-      .inputBox{
-        margin: 10px;
-        padding: 10px;
-        font-size: 15px;
-        border: solid 2px;
-        border-radius: 20px;
-        &:focus{
-          outline: none;
-        }
-        & img{
-          width: 25px;
-          position: absolute;
-          bottom: 26%;
-          right: 17%;
-          cursor: pointer;
-        }
-      }
-    }
-
+    --subMainColor:#fff;
+    --textColor:  #020D19;
+    --fontFamily: "Press Start 2P";
+    --background: radial-gradient(var(--mainColor), var(--subMainColor));
   }
+
+  body{
+      background: var(--background);
+      background-repeat: no-repeat;
+      color: var(--textColor);
+      overflow: hidden;
+      font-family: var(--fontFamily);
+      height: 970px;
+
+      .container{
+        background: var(--mainColor);
+        width: 70%;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        height: auto;
+        a{
+            text-decoration: none;
+            color: var(--textColor);
+            h1{
+              margin: 50px;
+              padding: 30px;
+              text-align: center;
+              &:hover{
+                  color: var(--subMainColor);
+                }
+              & img{
+                  width: 60px;
+                  height: 60px;
+                  transition:all 0.3s ease-in-out;
+                  &:hover{
+                      width: 70px;
+                      height: 70px;
+                    }
+                }
+            }
+        }
+        .navBar{
+          display: flex;
+          justify-content: space-between;
+          margin: 30px;
+          padding:30px;
+          a{
+            transition: 0.3s ease-in-out;
+            &::after{
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 20px;
+              height: 2px;
+              width: 0;
+              background-color: var(--subMainColor);
+              transition: width 0.3s ease-in-out;
+            }
+            &:hover{
+              color: var(--subMainColor);
+              transform: scale(1.1);
+              &::after{
+                width: 100%;
+              }
+            }
+            &:active{
+              transform: scale(0.95);
+            }
+
+          }
+        }
+        .content{
+          margin: 20px;
+          ol{
+            margin: 10px;
+            li{
+              margin: 10px  ;
+              .delete{
+                border: none;
+                border-radius: 10px;
+                width: 100px;
+                height: 30px;
+                margin: 5px;
+                position: relative;
+                bottom: 50px;
+                left: 80%;
+                font-size: 25px;
+                font-weight: bold;
+
+                background: linear-gradient(to right, #1e3c72, #2a9830); /* initial gradient */
+                background-size: 200% 100%;  /* makes the gradient double width */
+                background-position: left;   /* start from left */
+                transition: background-position 0.9s ease-in-out;
+                cursor: pointer;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                //&::after{
+                //  content: "X";
+                //  position: absolute;
+                //  right: 0;
+                //  top:0;
+                //  border: none;
+                //  border-radius: 10px;
+                //  background: var(--background);
+                //  width: 0;//this to be 0
+                //  height: 30px;
+                //
+                //}
+                &:hover{
+                  background-position: right;
+                  box-shadow: 0 0 10px rgba(42, 82, 152, 0.7);
+                  //&::after{
+                  //  width: 100%;
+                  //}
+                }
+              }
+            }
+          }
+        }
+
+    }
 }
