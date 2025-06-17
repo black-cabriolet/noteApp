@@ -9,10 +9,10 @@
 }
 body.light-mode{
   --mainColor: #C0C0C0;
-    --subMainColor:#fff;
-    --textColor:  #020D19;
-    --fontFamily: "Press Start 2P";
-    --background: radial-gradient(var(--mainColor), var(--subMainColor));
+  --subMainColor:#fff;
+  --textColor:  #020D19;
+  --fontFamily: "Press Start 2P";
+  --background: radial-gradient(var(--mainColor), var(--textColor));
   }
 
   body{
@@ -22,6 +22,7 @@ body.light-mode{
       overflow: hidden;
       font-family: var(--fontFamily);
       height: 970px;
+    transition: 0.3s ease-in-out;
 
       .container{
         background: var(--mainColor);
@@ -78,6 +79,61 @@ body.light-mode{
               transform: scale(0.95);
             }
 
+          }
+          .toggle{
+            .labels{
+              width: 100px;
+              height: 50px;
+              position: relative;
+              display: block;
+              background: #786978;
+              border-radius: 200px;
+              box-shadow:inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+              cursor: pointer;
+              transition: o.3s;
+              &:after{
+                content: "";
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                background: var(--subMainColor);
+                box-shadow: 0px 5px 10px var(--mainColor);
+                border-radius: 200px;
+              }
+              &:active:after{
+                width: 50px;
+              }
+              img{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                top: 5px;
+                z-index: 100;
+                &.moon{
+                  left: 5px;
+                  transition: 0.3s;
+                }
+                &.sun{
+                  left: 55px;
+                  transition: 0.3s;
+                }
+              }
+            }
+            input.checkbox{
+              width: 0;
+              height: 0;
+              visibility: hidden;
+              &:checked+.labels{
+                background: #ffffff;
+                &:after{
+                  left: 75px;
+                  transform: translateX(-50%);
+                  background: linear-gradient(90deg, #ffccB9,#d8860b);
+                }
+              }
+            }
           }
         }
         .content{

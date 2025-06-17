@@ -2,6 +2,8 @@
 //Be able to delete notes
 
 const notesContainer = document.getElementById('notes');
+const toggleButton = document.getElementById('checkbox');
+const body = document.body;
 
 function showNotes() {
     const notes = JSON.parse(localStorage.getItem('notes')) || [];
@@ -38,3 +40,37 @@ function deleteNote(index) {
 }
 
 showNotes();
+
+function themeToggle() {
+    body.classList.toggle('light-mode');
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+    }else{
+        localStorage.setItem('theme', 'dark');
+    }
+}
+toggleButton.addEventListener('click', themeToggle);
+
+function setThemeFromLocalStorage(){
+    const savedTheme = localStorage.getItem('theme')
+
+    if (savedTheme === 'light'){
+        body.classList.add('light-mode')
+    }else{
+        body.classList.remove('light-mode')
+    }
+}
+setThemeFromLocalStorage()
+
+function applySystemThemePreference(){
+    if(!localStorage.getItem('theme')){
+        if(window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches){
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'dark');
+        }else{
+            body.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark')
+        }
+    }
+}
+applySystemThemePreference()
